@@ -1,5 +1,5 @@
 from openai import OpenAI
-from .config import settings
+from config import settings
 
 class OAI_LLM:
     def __init__(self):
@@ -12,3 +12,10 @@ class OAI_LLM:
         )
         return response.choices[0].message.content.strip()
 
+
+
+if __name__ == "__main__":
+    llm = OAI_LLM()
+    prompt = "What is the capital of France?"
+    response = llm.generate_chat_response(prompt)
+    print(response)
